@@ -1,0 +1,5 @@
+program: SengRyan20.o
+	g++ SengRyan20.o -o program
+
+SengRyan20.o: SengRyan20.cpp
+	g++ -c SengRyan20.cpp

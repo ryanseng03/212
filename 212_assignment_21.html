@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>ICS 212 Assignment 21</title>
+<link href="labfiles_css.css" rel="stylesheet" type="text/css">
+<style>
+  .darkRed {
+    color: #900;
+  }
+</style>
+</head>
+
+<body>
+<div id="container">
+<header>
+  <h1>~  Assignment 21 ~</h1>
+</header>
+
+<div id="content">
+  <ul>
+    <li><strong>Objective</strong>
+      <ul>
+        <li>Create a base class named <strong>Circle</strong> with data members and functions related to circles and a derived class named <strong>Cylinder</strong> with data members and functions related to cylinders.</li>
+        </ul>
+    </li>
+    <li><strong>Related SLO</strong>
+      <ul>
+  <li>Develop properly structured multifile programs with automatic compilation.</li>
+  <li>Use classes and inheritance in C++.</li>
+      </ul>
+    </li>
+    <li><strong>Instructions</strong>
+      <ol type="A"> <!-- Instructions start -->
+        <li>Create a makefile named <span class="in-line-code"><strong>makefile</strong></span> that will automatically compile, link, and create an executable for this assignment.
+          <ul>
+            <li><strong>IMPORTANT</strong>: Be sure to use <span class="in-line-code"><strong>g++</strong></span> as the compiler NOT <strong><span class="in-line-code">gcc</span></strong> as we are now programming in C++.</li>
+            <li>Example makefile using g++ <a href="https://laulima.hawaii.edu/access/content/user/emeyer/ics/212-cable/code/session20/makefile" target="_blank">here</a></li>
+            <li>Do NOT submit a makefile with any other name.</li>
+            <li>There are no extra .h or .cpp needed for this assignment.</li>
+          </ul>
+        </li>
+        <li>Create a program named <span class="in-line-code"><strong>LastnameFirstname21.cpp</strong></span>, that does the following:
+          <ol> <!-- Program start -->
+            <li>Note: There is no user input for this program.</li>
+            <li>Define a symbolic constant named <span class="in-line-code">PI</span> with the value <span class="in-line-code">3.1415926</span>. Use this symbolic constant when dealing with calculations involving PI.</li>
+            <li>Define a base class named <strong>Circle</strong> for storing the radius and calculating the area of a circle.</li>
+            <li><strong>Circle</strong> class contains the following:
+              <ol type="i"> <!-- Circle class start -->
+                <li>1 protected double data member for the radius.</li>
+                <li>1 default constructor that creates a circle with radius 1.</li>
+                <li>1 overloaded constructor with a parameter that creates a circle with a given radius.</li>
+                <li>1 accessor function named <span class="in-line-code"><strong>getRadius</strong></span> for the radius.</li>
+                <li>1 mutator function named <strong><span class="in-line-code">setRadius</span></strong> for the radius.</li>
+                <li>1 member function named <strong><span class="in-line-code">area</span></strong> that calculates and returns the area of the circle.
+                  <ul>
+                    <li>area = <span class="in-line-code">πr<sup>2</sup></span>                </li>
+                    </ul>
+                  </li>
+                
+                <li>Any member functions that do NOT modify the radius data member use the <span class="in-line-code">const</span> keyword to ensure those functions do not accidentally modify the data member.</li>
+                <li>Any member functions that do modify the radius data member implements the following error correction:
+                  <ul>
+                    <li>If the radius will be 0, make it 1 instead.</li>
+                    <li>If the radius will be negative, make it positive instead. </li>
+                </ul>
+                </li>
+                </ol> 
+              <!-- Circle class end -->
+              </li>
+            <li>Define a derived class named <strong>Cylinder</strong> (which inherits all data members and member functions of class <strong>Circle</strong>) for storing the radius (in base class <strong>Circle</strong>) and height and calculating the area (surface area) and volume of a cylinder.</li>
+            <li><strong>Cylinder</strong> class contains the following:
+  <ol type="i"> <!-- Cylinder class start -->
+    <li>1 private double data member for the height.</li>
+    <li>1 constructor that creates a Cylinder given a radius and height and uses the inherited Circle constructor to initialize the radius data member.</li>
+    <li>1 accessor function named <strong><span class="in-line-code">getHeight</span></strong> for the height.</li>
+    <li>1 mutator function named <strong><span class="in-line-code">setHeight</span></strong> for the height.</li>
+    <li>1  member function named <strong><span class="in-line-code">area</span></strong> that calculates and returns the surface area of the cylinder.
+      <ul>
+        <li>surface area of a cylinder = <span class="in-line-code">2πrh + 2πr<sup>2</sup></span></li>
+        <li>This member function will override the inherited member function from the Circle class.</li>
+        </ul>
+      </li>
+    <li>1 member function named <strong><span class="in-line-code">volume</span></strong> that calculates and returns the volume of the cylinder
+      <ul>
+        <li>volume of a cylinder = <span class="in-line-code">πr<sup>2</sup>h</span></li>
+        </ul>
+      </li>
+    <li>Any member functions that do NOT modify the height data member use the <span class="in-line-code"><strong>const</strong></span> keyword to ensure those functions do not accidentally modify the data member.</li>
+    <li>Any member functions that do modify the height data member implements the following error correction:
+      <ul>
+        <li>If the height will be 0, make it 1 instead.</li>
+        <li>If the height will be negative, make it positive instead. </li>
+      </ul>
+    </li>
+    </ol> 
+  <!-- Cylinder class end -->
+              </li>
+            <li>Use my <span class="in-line-code">main()</span> to test your classes to get the same output shown below: <a href="https://laulima.hawaii.edu/x/ndIl9Y" target="_blank">https://laulima.hawaii.edu/x/ndIl9Y</a>              </li>
+            <ul>
+              <li>There should be no issues compiling or running with the provided main.<br>
+              </li>
+            </ul>
+            <li>Be sure to have a program description at the top and in-line comments.
+            </li>
+          </ol>
+          <ol>
+            <ul>
+              <li>Ensure each member function has a description above as well as in-line comments.</li>
+              <li>See the commented version <a href="https://laulima.hawaii.edu/access/content/user/emeyer/ics/212-cable/code/session23/inheritance.cpp.html" target="_blank">inheritance.cpp</a> to see how to comment your functions.</li>
+              <li>Be sure to have read through the <a href="../212_assignmentpolicy.html" target="_blank">assignment policy</a> for this class.</li>
+            </ul>
+          </ol> 
+          <!-- Program end -->
+        </li>
+        </ol> <!-- Instructions end -->
+    </li>
+    <li><strong>Example Output</strong><br>
+      <pre><strong>% make
+% ./program</strong>
+Test Circle class default constructor and area() function:
+Circle circle1: radius = 1
+area = 3.14159
+
+Test Circle class constructor with radius (-10):
+Circle circle2: radius = 10
+Test set method, set circle2 to radius -5...
+radius = 5
+area = 78.5398
+
+Test Cylinder class given radius (20) and height (-30):
+Cylinder cylinder1: radius = 20; height = 30
+surface area = 6283.19
+volume = 37699.1
+
+Test set method, set cylinder1 to radius (0) and height (0)...
+radius = 1; height = 1
+surface area = 12.5664
+volume = 3.14159</pre>
+    </li>
+    <li><strong>Notes</strong>
+<ul>
+  <li>Related example program: <a href="https://laulima.hawaii.edu/access/content/user/emeyer/ics/212-cable/code/session23/inheritance.cpp.html" target="_blank">inheritance.cpp</a></li>
+  </ul>
+    </li>
+    <li><strong>Submission Guidelines</strong>
+      <ul>
+        <li>Submit your <strong>LastnameFirstname21.cpp</strong> and <strong>makefile</strong> files to the Digital Dropbox.
+          <ul>
+            <li>Be sure to check your hawaii.edu e-mail for confirmation of your submission.        </li>
+          </ul>
+        </li>
+        <li>Due Date: Tuesday, Dec. 6 by 11:55pm</li>
+        <li class="darkRed"><strong>No late submissions are accepted for this assignment.</strong></li>
+        </ul>
+    </li>
+  </ul>
+  </div>
+
+<footer>
+&nbsp;
+</footer>
+
+</div>
+</body>
+</html>
